@@ -1,0 +1,10 @@
+[user]
+    name = Enes Anbar
+    email = enesanbar@gmail.com
+[core]
+    excludesfile = ~/.gitignore
+    editor = subl -n -w
+[color]
+    ui = auto
+[merge]
+    conflictstyle = diff3
