@@ -1,6 +1,6 @@
 [user]
-    name = Enes Anbar
-    email = enesanbar@gmail.com
+	name = Enes Anbar
+	email = eanbar@ebay.com
 [core]
     excludesfile = ~/.gitignore
     editor = subl -n -w
@@ -8,3 +8,5 @@
     ui = auto
 [merge]
     conflictstyle = diff3
+[credential]
+	helper = cache

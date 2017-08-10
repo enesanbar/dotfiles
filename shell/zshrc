@@ -51,7 +51,7 @@ ZSH_THEME="bullet-train"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -73,7 +73,12 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages colorize django docker docker-compose git history history-substring-search node npm python zsh-syntax-highlighting)
+plugins=(colored-man-pages colorize django docker docker-compose dotenv emoji git git-prompt git-remote-branch history history-substring-search man node npm python pip virtualenv zsh-syntax-highlighting zsh-navigation-tools)
+
+source $ZSH/oh-my-zsh.sh
+
+# Enable Syntax Highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -82,9 +87,3 @@ for file in $HOME/.{shell_exports,shell_aliases,shell_functions}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
-source $ZSH/oh-my-zsh.sh
-
-# Enable Syntax Highlighting
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-

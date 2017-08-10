@@ -16,7 +16,7 @@ export LANG="en_US"
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
@@ -26,3 +26,5 @@ export PAGER='less'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
