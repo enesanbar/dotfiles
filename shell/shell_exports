@@ -27,4 +27,25 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
+export PATH=/Library/Java/Home/bin:$PATH
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+export WORKON_HOME=~/virtualenv
+export JAVA_HOME=/Library/Java/Home
+source /usr/local/bin/virtualenvwrapper.sh
+
+export FORMAT="\nID\t{{.ID}}\nIMAGE\t{{.Image}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.RunningFor}}\nSTATUS\t{{.Status}}\nPORTS\t{{.Ports}}\nNAMES\t{{.Names}}\n"
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+export LDFLAGS="-L/usr/local/opt/php@7.2/lib"
+export CPPFLAGS="-I/usr/local/opt/php@7.2/include"
+
+# Go lang
+export GOPATH="${HOME}/workspace/golang"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+

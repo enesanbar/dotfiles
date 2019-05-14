@@ -42,7 +42,7 @@ ZSH_THEME="bullet-train"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -73,7 +73,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages colorize django docker docker-compose dotenv emoji git git-prompt git-remote-branch history history-substring-search man node npm python pip virtualenv zsh-syntax-highlighting zsh-navigation-tools)
+plugins=(colored-man-pages colorize command-time docker dotenv emoji git git-prompt git-remote-branch history history-substring-search man mvn node npm python pip virtualenv zsh-navigation-tools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,3 +87,16 @@ for file in $HOME/.{shell_exports,shell_aliases,shell_functions}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+fpath=(~/.zsh.d/ $fpath)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/eanbar/.sdkman"
+[[ -s "/Users/eanbar/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/eanbar/.sdkman/bin/sdkman-init.sh"
+
+HISTSIZE=999999999
+SAVEHIST=$HISTSIZE
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"

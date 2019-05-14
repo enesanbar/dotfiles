@@ -6,3 +6,25 @@ take () {
    cd $1
 }
 
+# Docker
+docker_rm() {
+    docker stop $1 && docker rm $1
+}
+
+k8s_switch_cluster() {
+    if [[ $1 == "dev" ]]; then
+        CLUSTER="admin-dev"
+    elif [[ $1 == "pp" ]]; then
+        CLUSTER="admin-pp"
+    elif [[ $1 == "istio" ]]; then
+        CLUSTER="istio"
+    else
+        CLUSTER="minikube"
+    fi
+    kubectl config use-context $CLUSTER
+}
+
+k8s_switch_ns() {
+    kubectl config set-context "$(kubectl config current-context)" --namespace=${1-default}
+}
+
