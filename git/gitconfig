@@ -2,11 +2,20 @@
 	name = Enes Anbar
 	email = eanbar@ebay.com
 [core]
-    excludesfile = ~/.gitignore
-    editor = subl -n -w
+	excludesfile = /Users/eanbar/.gitignore
+	editor = subl -n -w
+	autocrlf = input
 [color]
     ui = auto
 [merge]
     conflictstyle = diff3
 [credential]
-	helper = cache
+	helper = osxkeychain
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/eanbar/.stCommitMsg
